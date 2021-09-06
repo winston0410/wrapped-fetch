@@ -6,8 +6,8 @@ export interface UnwrappedResponse<T> {
 
 type Fetch = (input: RequestInfo, init?: RequestInit) => Promise<Response>;
 
-const createWrapped = (f: Fetch) => {
-  f = f ? f : window.fetch;
+const createWrapped = (f?: Fetch) => {
+  f = f ? f : fetch;
   return async <Body>(
     url: RequestInfo,
     opts?: RequestInit
