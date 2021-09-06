@@ -10,7 +10,7 @@ const createWrapped = (f: Fetch) => {
   f = f ? f : window.fetch;
   return async <Body>(
     url: RequestInfo,
-    opts: RequestInit
+    opts?: RequestInit
   ): Promise<UnwrappedResponse<Body>> => {
     const res = await f(url, opts);
 
