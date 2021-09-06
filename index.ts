@@ -1,4 +1,4 @@
-interface UnwrappedResponse<T> {
+export interface UnwrappedResponse<T> {
   ok: boolean;
   status: number;
   body: T;
